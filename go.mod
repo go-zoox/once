@@ -1,4 +1,4 @@
-module github.com/go-zoox/safe
+module github.com/go-zoox/once
 
 go 1.18
 
