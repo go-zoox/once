@@ -14,16 +14,16 @@ type Once interface {
 }
 
 type once struct {
-	onces *safe.Map
-	datas *safe.Map
+	onces *safe.Map[string, any]
+	datas *safe.Map[string, any]
 	sync.RWMutex
 }
 
 // New creates once.
 func New() Once {
 	return &once{
-		onces: safe.NewMap(),
-		datas: safe.NewMap(),
+		onces: safe.NewMap[string, any](),
+		datas: safe.NewMap[string, any](),
 	}
 }
 
